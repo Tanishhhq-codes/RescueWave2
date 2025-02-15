@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="video-background" aria-hidden="true">
+        <iframe src="https://www.youtube.com/embed/BJ75j1j-rUg?si=PCTWH0cHSAYewdNA&autoplay=1&mute=1&loop=1&playlist=BJ75j1j-rUg&controls=0&showinfo=0&rel=0" 
+            title="Background video" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>
+    </div>
+    <div class="overlay" aria-hidden="true"></div>
+
+    <!-- Film Transition Effect -->
+    <div class="film-effect" id="film" aria-hidden="true"></div>
+
+    <div class="container" id="form-container">
+        <div class="form-box">
+            <h2 id="form-title">Login</h2>
+            
+            <div class="spinner" id="loading-spinner"></div>
+            <div class="status-message" id="status-message"></div>
+            
+            <form id="auth-form" novalidate>
+                <div class="input-box" id="username-field">
+                    <input type="text" id="username" required aria-label="Username">
+                    <label for="username">Username</label>
+                    <span class="error-message" id="username-error">Please enter a valid username</span>
+                </div>
+                <div class="input-box hidden" id="email-field">
+                    <input type="email" id="email" required aria-label="Email address">
+                    <label for="email">Email Address</label>
+                    <span class="error-message" id="email-error">Please enter a valid email address</span>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="password" required aria-label="Password" minlength="8">
+                    <label for="password">Password</label>
+                    <span class="error-message" id="password-error">Password must be at least 8 characters</span>
+                </div>
+                <button type="submit" class="btn" id="submit-btn">Login</button>
+                <a href="#" class="forgot-password" id="forgot-password">Forgot Password?</a>
+                
+                <p class="toggle-text" id="toggle-text">
+                    Don't have an account?<a href="#" id="toggle-form">Sign Up</a>
+                </p>
+                
+                <div class="social-login" id="social-login">
+                    <p>Or login with</p>
+                    <div class="social-icons">
+                        <div class="social-icon" id="google-login" aria-label="Login with Google">
+                            <img src="tj1.jpg">
+                        </div>
+                        <div class="social-icon" id="facebook-login" aria-label="Login with Facebook">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png" alt="Facebook icon">
+                        </div>
+                        <div class="social-icon" id="github-login" aria-label="Login with GitHub">
+                            <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub icon">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <!-- Firebase Auth -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="firebase-config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
